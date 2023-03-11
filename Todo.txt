@@ -1,0 +1,11 @@
+Todo
+1. Create routes for login page and products page      Done
+2. Create all products page.     Done
+3. Create Login page      Done
+4. Add a loading spinner during product/image upload
+5. Work on Vendors Dashboard
+6. Migrate to AWS elasticbeanstalk
+7. Add github CI/CD
+8. Work on add product to cart (using redux and thunk)
+9. Reduce image size before upload (Rails)
+10> .....and others

@@ -1,0 +1,33 @@
+.App {
+  text-align: center;
+}
+
+.landing_page_container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.extra{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  overflow: hidden;
+  width: 400px;
+}
+.extra Button {
+  width: 400px;
+}
+
+.signup_form{
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 10%);
+  width:30%
+}
+
+.flash_message{
+  margin-top: 5px;
+}

@@ -1,0 +1,59 @@
+{
+    "AWSEBDockerrunVersion": "1",
+    "ports": [
+        {
+            "containerPort": 80
+        }
+    ],
+    "containerDefinitions": [
+        {
+            "name": "frontend",
+            "image": "snowdenmoses/frontend",
+            "memory": 1000,
+            "essential": false,
+            "host": "frontend"
+        },
+        {
+            "name": "api",
+            "image": "snowdenmoses/api",
+            "essential": false,
+            "memory": 1000,
+            "host": "api"
+        },
+        {
+            "name": "db",
+            "image": "snowdenmoses/db",
+            "essential": false,
+            "memory": 1000,
+            "host": "db",
+            "PortMappings": [
+                {
+                    "ContainerPort": 5432,
+                    "HostPort": 5432
+                }
+            ],
+            "Volumes": [
+                {
+                    "HostDirectory": "./pg-data",
+                    "ContainerDirectory": "/var/lib/postgresql/data"
+                }
+            ]
+        }, 
+        {
+            "Name": "nginx",
+            "Image": "snowdenmoses/nginx",
+            "Memory": 512,
+            "Essential": true,
+            "PortMappings": [
+                {
+                    "ContainerPort": 80,
+                    "HostPort": 80
+                }
+            ],
+            "Links": [
+                "frontend",
+                "api", "db"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,43 @@
+version: "3"
+services:
+    db:
+        build:
+          context: ./db
+        environment:
+          POSTGRES_PASSWORD: example
+          POSTGRES_USERNAME: postgres
+          POSTGRES_DATABASE: findthatplug
+        restart: always
+        ports:
+          - "5432:5432"
+        volumes:
+          - pg-datafolderv2:/var/lib/postgresql/data
+    frontend:
+        build:
+          context: ./frontend
+        volumes:
+          - /app/node_modules
+          - ./frontend:/app
+    api:
+        build:
+          context: ./server/findthatplug
+        volumes:
+          - ./server/findthatplug:/app
+        command: bundle exec rails s -p 3000 -b '0.0.0.0'
+        depends_on:
+          - db
+    nginx:
+        build:
+            context: ./nginx
+        volumes:
+          - ./nginx/templates:/etc/nginx/templates
+          - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+        restart: always
+        ports:
+          - "80:80"
+        depends_on:
+          - api
+          - frontend
+volumes:
+    pg-datafolderv2:
+    

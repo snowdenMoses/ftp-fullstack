@@ -1,0 +1,8 @@
+1. AWS 
+    i. Create a user group and give it AmazonEC2FullAccess and AdministratorAccess-AWSElasticBeanstalk permission
+    ii. Create a group and add it to the user group (from where you can get the AWS Access key and AWS secret key)
+    iii.    in Elasticbeanstalk service, create an application.
+    iv. Create an environment and select Docker as the platform and select Docker running on 64bit Amazon Linux 2/3.5.4
+    v.  If the container is more than one change the instance type from t2-micro to t3-large
+    vi. Go to S3 bucket and change the privacy of the bucket automatically created by the Elasticbeanstalk from private to public, and enable the ACL also.
+    vii.    
