@@ -61,5 +61,5 @@ Rails.application.configure do
   IPAddr.new("::/0"),             # All IPv6 addresses.
   "localhost",                    # The localhost reserved domain.
 ]
-  config.hosts << "findthatplugproductionversion-env.eba-j2seh8n6.us-east-1.elasticbeanstalk.com"
+  config.hosts << "ftpfullstack-env.eba-j2seh8n6.us-east-1.elasticbeanstalk.com"
 end
