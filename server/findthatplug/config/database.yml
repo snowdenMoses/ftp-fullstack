@@ -17,14 +17,19 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: <%= ENV['POSTGRES_HOST'] %>
+  # host: <%= ENV['POSTGRES_HOST'] %>
+  host: findthatplug.cpeymcxlnoix.us-east-1.rds.amazonaws.com
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  port: <%= ENV['POSTGRES_PORT'] %>
-  database: <%= ENV['POSTGRES_DATABASE'] %>
-  username: <%= ENV['POSTGRES_USERNAME'] %>
-  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  port: 5432
+  # port: <%= ENV['POSTGRES_PORT'] %>
+  database: findthatplug
+  # database: <%= ENV['POSTGRES_DATABASE'] %>
+  username: postgres
+  # username: <%= ENV['POSTGRES_USERNAME'] %>
+  password: mypostgrespassword
+  # password: <%= ENV['POSTGRES_PASSWORD'] %>
 
 development:
   <<: *default
