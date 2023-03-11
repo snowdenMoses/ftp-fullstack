@@ -30,8 +30,8 @@ jobs:
         aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         application_name: findthatplug_production_version
-        environment_name: Findthatplugproductionversion-env-1
-        version_label: "bucket_version7-${{ steps.format-time.outputs.replaced }}"
+        environment_name: Ftpfullstack-env
+        version_label: "Ftpfullstack1-${{ steps.format-time.outputs.replaced }}"
         region: us-east-1
         deployment_package: deploy.zip
 
